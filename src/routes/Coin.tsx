@@ -71,6 +71,14 @@ const Tab = styled.span<{ isActive: boolean }>`
     display: block;
   }
 `;
+const Home = styled.button`
+  text-align:center;
+  padding:5px;
+  border-radius:5px;
+  right: 200px;
+  display:flex;
+  color:${(props) => props.theme.accentColor};
+`;
 interface RouteParams {
     coinID:string;
 }
@@ -168,6 +176,11 @@ function Coin(){
         <title>{state?.name ? state.name : loading ? "Loading..." : infoData?.name}</title>
       </Helmet>
     <Header>
+          <Link to={{
+              pathname:`/`,
+          }}>
+            <div><Home>HOME</Home></div>
+          </Link>
         <Title>{state?.name ? state.name : loading ? "Loading..." : infoData?.name}</Title>
     </Header>
     {loading ? (

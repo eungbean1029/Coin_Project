@@ -20,7 +20,7 @@ function Chart({coinID}: ChartProps) {
   const {isLoading ,data} = useQuery<IHistorical[]>(["ohlcv", coinID], () => fetchCoinHistory(coinID))
     return <div>{isLoading ? ("Loading..."
     ) : (
-      <ApexChart 
+      <ApexChart
       type="line"
       series={[
         {
